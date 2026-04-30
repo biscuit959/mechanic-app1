@@ -69,6 +69,7 @@ app.get('/api/jobs', (req, res) => {
 });
 
 app.post('/api/jobs', (req, res) => {
+    console.log("POST received:", req.body);
     const jobs = req.body;
     db.run('DELETE FROM Jobs', (err) => {
         if (err) {
