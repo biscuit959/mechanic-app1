@@ -1,0 +1,432 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     background-color: #a7aed7;
+    
+}
+
+body {
+    font-family: 'Sarif', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.username {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 50px;
+    border: 3px solid #000000;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+.password {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 50px;
+    border: 3px solid #000000;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+.text {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.text1 {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.submit {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 40px;
+    border: 3px solid #000000;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: bold; 
+    background-color: white;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #f0f0f0;
+}
+
+nav {
+    background-color: white;
+    display: inline-flex;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    gap: 10px;
+    align-self: flex-start;
+}
+
+nav a {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        
+}
+nav ul li {
+    padding: 8px 12px;
+    background-color: white;
+
+}
+
+/* Excel-style table styles */
+
+.table-container {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 1400px;
+    border: 3px solid #000000;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    background-color: white;
+    font-size: 25px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 16px;
+    table-layout: fixed;
+}
+
+.table th {
+    background-color: #dad5f6;
+    border: 2px solid #000000;
+    padding: 12px 8px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table td {
+    border: 2px solid #000000;
+    padding: 0;
+    background-color: white;
+    height: 50px;
+}
+
+.table td input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 8px 10px;
+    font-size: 16px;
+    background-color: white;
+    font-family:  Times, serif;
+    box-sizing: border-box;
+}
+
+.table td input:focus {
+    outline: 2px solid #4a90e2;
+    background-color: #f0f8ff;
+}
+
+.table td input:hover {
+    background-color: #f9f9f9;
+}
+
+/* Column widths */
+.table th:nth-child(1) { width: 100px; }  /* Date */
+.table th:nth-child(2) { width: 120px; }  /* Reg Plate */
+.table th:nth-child(3) { width: 150px; }  /* Owner */
+.table th:nth-child(4) { width: 200px; }  /* Job Description */
+.table th:nth-child(5) { width: 200px; }  /* Comments */
+.table th:nth-child(6) { width: 180px; }  /* Parts */
+.table th:nth-child(7) { width: 100px; }  /* Price */
+
+#add-row-btn {
+     position: absolute;
+    top: 20px;
+    right: 170px;
+    width: 150px;
+    height: 40px;
+    border: 3px solid #000000;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    cursor: pointer;
+}
+#add-row-btn:hover {
+    background-color: #b497e7;
+}
+
+#manual-save {
+   position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 150px;
+    height: 40px;
+    border: 3px solid #000000;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    cursor: pointer;
+}
+
+#manual-save:hover {
+    background-color: #b497e7;
+}
+
+
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e5e4e4;
+    border-radius: 6px;
+    border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a2a2a2;
+}
+
+/* Status bar at bottom */
+.status-bar {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: white;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+    .table-container {
+        padding: 10px;
+    }
+    
+    .table th {
+        font-size: 14px;
+        padding: 8px 4px;
+    }
+    
+    .table td input {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .table-container {
+        max-width: 1600px;
+    }
+    
+    .table {
+        font-size: 18px;
+    }
+    
+    .table td input {
+        font-size: 18px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: rgb(226, 201, 248);
+        padding: 0;
+    }
+    
+    .table-container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .table td input {
+        border: none;
+        outline: none;
+    }
+}
+
+/* Popup Styles */
+#popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+    width: 90%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#popup-text {
+    width: 960px;
+    height: 600px;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+#close-popup {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #c0b3e1;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#close-popup:hover {
+    background-color: #b8a7e7;
+    outline: black solid 1px;
+}
+
+.mechanic-view table th:nth-child(7) {
+    display: none;
+    
+}
+.mechanic-view table td:nth-child(7) {
+    display: none;
+}
+
+
+tr[data-mechanic-id="2"] input { color: rgb(2, 2, 84); }
+
+tr[data-mechanic-id="3"] input { color: rgb(2, 137, 119); }
+
+tr[data-mechanic-id="4"] input { color: rgb(159, 2, 2); }
+
+tr[data-mechanic-id="5"] input { color: rgb(57, 2, 83); }
+
+
+.search-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border: 3px solid #000000;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-container label,
+.search-container input,
+.search-container button {
+    background-color: white;
+}
+.search-container input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    background-color: white;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.search-container button:hover {
+    background-color: #b497e7;
+}
+

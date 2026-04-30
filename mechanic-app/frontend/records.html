@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Records</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="records.html">Records</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="search-container">
+        <label for="date-search">Search by Date:</label>
+        <input type="date" id="date-search">
+        <button id="search-btn">Search</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+ 
+    <div class="table-container">
+        <table class="table" id="records-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Reg Plate</th>
+                    <th>Owner</th>
+                    <th>Job Description</th>
+                    <th>Comments</th>
+                    <th>Parts</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="records-body"></tbody>
+        </table>
+    </div>
+     <script src="records.js" defer></script>
+  </body>
+</html>

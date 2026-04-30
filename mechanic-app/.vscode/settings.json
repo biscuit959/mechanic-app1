@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "backend\\garage.db",
+            "name": "garage"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
