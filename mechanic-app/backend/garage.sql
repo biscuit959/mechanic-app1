@@ -1,22 +1,12 @@
-CREATE TABLE Garage (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    USERNAME TEXT UNIQUE NOT NULL,
-    NAME TEXT NOT NULL,
-    ROLE TEXT NOT NULL,
-    PASSWORD TEXT NOT NULL
-);
 
-INSERT INTO Garage (USERNAME, NAME, ROLE, PASSWORD) 
-VALUES ('Ethnic', 'Ethnic', 'admin', 'Et3654Da5');
+DELETE FROM users;
+INSERT INTO users (id, username, password, name, role) VALUES (2, 'Ethnic', 'Et3654Da5', 'Ethnic', 'admin');
+INSERT INTO users (id, username, password, name, role) VALUES (3, 'mechanic1', 'Au545GD', 'Aurel', 'mechanic');
+INSERT INTO users (id, username, password, name, role) VALUES (4, 'mechanic2', 'An456GD', 'Andrei', 'mechanic');
+INSERT INTO users (id, username, password, name, role) VALUES (5, 'mechanic3', 'Da789GD', 'Dani', 'mechanic');
+INSERT INTO users (id, username, password, name, role) VALUES (6, 'mechanic4', 'Mi321GD', 'Mihai', 'mechanic');
 
-INSERT INTO Garage (USERNAME, NAME, ROLE, PASSWORD) 
-VALUES ('mechanic1', 'Aurel', 'mechanic', 'Au545GD');
+.tables
+SELECT * FROM users;
+SELECT * FROM jobs;
 
-INSERT INTO Garage (USERNAME, NAME, ROLE, PASSWORD) 
-VALUES ('mechanic2', 'Andrei', 'mechanic', 'An456GD');
-
-INSERT INTO Garage (USERNAME, NAME, ROLE, PASSWORD) 
-VALUES ('mechanic3', 'Dani', 'mechanic', 'Da789GD');
-
-INSERT INTO Garage (USERNAME, NAME, ROLE, PASSWORD) 
-VALUES ('mechanic4', 'Mihai', 'mechanic', 'Mi321GD');
