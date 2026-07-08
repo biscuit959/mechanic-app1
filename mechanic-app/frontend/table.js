@@ -59,12 +59,21 @@ let currentEditingRow = null;
 let currentEditingInput = null;
 
 // Function to load jobs from database
+
 function loadJobs() {
+    console.log("Before clear, rows:", document.querySelectorAll("#table tbody tr").length);
+    document.querySelector("#table tbody").innerHTML = "";
+    console.log("After clear, rows:", document.querySelectorAll("#table tbody tr").length);
+    
     fetch('http://localhost:3000/api/jobs')
         .then(response => response.json())
         .then(savedData => {
+            console.log("Data received, adding", savedData.length, "jobs");
+            console.log("loadJobs: received", savedData.length, "jobs");
+            console.log("loadJobs: data:", savedData);
+            tableBody.innerHTML = "";
+            console.log("loadJobs: table cleared");
             if (savedData && savedData.length > 0) {
-                tableBody.innerHTML = "";
                 savedData.forEach(job => {
                     const row = document.createElement("tr");
                     row.setAttribute("data-mechanic-id", job.mechanicId);
@@ -82,35 +91,31 @@ function loadJobs() {
                     `;
                     tableBody.appendChild(row);
                 });
+                console.log("loadJobs: added", savedData.length, "rows");
             } else {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 1; i++) {
                     tableBody.appendChild(createNewRow());
                 }
+                console.log("loadJobs: no data, added 1 blank row");
             }
         })
         .catch(error => {
-            console.error("Error loading jobs:", error);
-            for (let i = 0; i < 5; i++) {
+            console.error("loadJobs: fetch error:", error);
+            tableBody.innerHTML = "";
+            for (let i = 0; i < 1; i++) {
                 tableBody.appendChild(createNewRow());
             }
         });
 }
-
-// Check if buttons exist before adding listeners
-const addRowBtn = document.getElementById("add-row-btn");
-const saveAllBtn = document.getElementById("save-all-btn");
-
 // Add Row button
+const addRowBtn = document.getElementById("add-row-btn");
 if (addRowBtn) {
     addRowBtn.addEventListener("click", function() {
         tableBody.appendChild(createNewRow());
     });
-} else {
-    console.error("Add Row button not found - check ID 'add-row-btn' in HTML");
 }
 
-// Save All button
-// Manual Save button (individual save)
+// Manual Save button
 const manualSaveBtn = document.getElementById("manual-save");
 if (manualSaveBtn) {
     manualSaveBtn.addEventListener("click", function() {
@@ -141,16 +146,16 @@ if (manualSaveBtn) {
         .then(response => response.json())
         .then(data => {
             alert(`Saved ${rows.length} jobs successfully!`);
-            console.log("Manual save:", data);
+            tableBody.innerHTML = "";
+            loadJobs(); // This calls your existing loadJobs function
         })
         .catch(error => {
             console.error("Manual save error:", error);
             alert("Save failed. Check console.");
         });
     });
-} else {
-    console.error("Manual save button not found - check ID 'manual-save' in HTML");
 }
+
 // Popup click listener
 function clickListener() {
     const tableBodyElement = document.getElementById("table-body");
