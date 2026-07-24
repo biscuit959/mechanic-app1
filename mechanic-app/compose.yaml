@@ -1,25 +1,17 @@
 
-version: "3.9"
+#Backend Services
 services:
- # Backend service
   backend:
-    image: ma_db:latest
-    container_name: backend
-    environment:
-      NODE_ENV: production
-      PORT: 3000
+    build: .
+    container_name: mechanic_backend
+
     ports:
       - "3000:3000"
-    volumes:
-      - ./backend:/app
-    restart: unless-stopped
 
-    # Frontend service
-    frontend:
-    image: ma_fe:latest
-    container_name: frontend
-    ports:
-      - "8080:80"
-    depends_on:
-      - backend
+    environment:
+      PORT: 3000
+
+    volumes:
+      - ./data:/app/data
+
     restart: unless-stopped

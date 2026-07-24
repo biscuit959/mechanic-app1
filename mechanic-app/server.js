@@ -3,18 +3,23 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-const db = new sqlite3.Database('./garage.db', (err) => {
-    if (err) {
-        console.error('Could not connect to database', err);
-    } else {
-        console.log('Connected to SQLite database');
+const path = require("path");
+
+const db = new sqlite3.Database(
+    path.join(__dirname, "data", "garage.db"),
+    (err) => {
+        if (err) {
+            console.error("Could not connect to database", err);
+        } else {
+            console.log("Connected to SQLite database");
+        }
     }
-});
+);
 
 // Create Jobs table if it doesn't exist
 db.run(`CREATE TABLE IF NOT EXISTS Jobs (
